@@ -63,7 +63,7 @@ public class tablaBusiness {
                     pago.getCapital(),
                     pago.getBalance(),
                     pago.getTotalInterest(),
-                    requestTabla.getNum_tarjeta()
+                    requestTabla.getRfc()
             );
             balance = nbalance;
         }

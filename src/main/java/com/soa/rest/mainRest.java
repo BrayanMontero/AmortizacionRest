@@ -49,10 +49,11 @@ public class mainRest {
 
                 // Pass variables to tablaRest controller
                 RequestTabla requestTabla = new RequestTabla();
-                requestTabla.setNum_tarjeta(request.getRfc());
+                requestTabla.setNum_tarjeta(request.getNum_tarjeta());
                 requestTabla.setInteres(request.getInteres());
                 requestTabla.setMeses(request.getMeses());
                 requestTabla.setCantida(request.getCantida());
+                requestTabla.setRfc(request.getRfc());
 
                 // Call tablaRest controller
                 ResponseEntity<RespuestaTabla> tablaResponseEntity = restTemplate.postForEntity(

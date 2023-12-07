@@ -11,6 +11,7 @@ public class RequestTabla {
     private Integer interes;
     private Integer meses;
     private Double cantida;
+    private String rfc;
     /**
      * @return the num_tarjeta
      */
@@ -58,6 +59,18 @@ public class RequestTabla {
      */
     public void setCantida(Double cantida) {
         this.cantida = cantida;
+    }
+    /**
+     * @return the rfc
+     */
+    public String getRfc() {
+        return rfc;
+    }
+    /**
+     * @param rfc the rfc to set
+     */
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
     }
 
 }

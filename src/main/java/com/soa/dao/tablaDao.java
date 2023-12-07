@@ -14,12 +14,13 @@ public class tablaDao {
     protected JdbcTemplate jdbcTemplate;
 
     public void inserta(RequestTabla requesTabla, double totalInterest) {
-        this.jdbcTemplate.execute("INSERT INTO genamortizacion(num_tarjeta, interes, meses, cantidad, totalInterest) VALUES('" + 
+        this.jdbcTemplate.execute("INSERT INTO genamortizacion(num_tarjeta, interes, meses, cantidad, totalInterest,rfc) VALUES('" + 
                                     requesTabla.getNum_tarjeta()+ "', " + 
                                     requesTabla.getInteres()+ ", " + 
                                     requesTabla.getMeses()+ ", " + 
                                     requesTabla.getCantida()+ ", " +
-                                    totalInterest + ");");
+                                    totalInterest+ ", '" +
+                                    requesTabla.getRfc() + "');");
     }
    
 

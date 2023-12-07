@@ -64,6 +64,7 @@ public class tablaBusinessActualizar {
                 double interest = balance * tasaInteres/12;
                 double payment = primerPeriodo.getPago();
                 double nbalance=0;
+                
                 if (requestTablaActualizar.getMes()==i) {
                     nbalance=balance+balance*tasaInteres/12-payment-requestTablaActualizar.getPago();
                 }else {
@@ -109,7 +110,7 @@ public class tablaBusinessActualizar {
             
             
             
-//            respuesta.setMessage("OK");
+            respuestaTablaActualizar.setMessage("Pago extra aprobado");
 //            respuesta.setUsuarios(list);
             
         } catch (Exception e) {

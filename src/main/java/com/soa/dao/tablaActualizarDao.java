@@ -26,7 +26,7 @@ public class tablaActualizarDao {
         List<tablaDto> listPeriodo = jdbcTemplate.query(
                 "select pago, interes, capital, balance, totalInterest, rfc"
                 + " from tabla where periodo= "
-                + requestTablaActualizar.getMes()+ " AND rfc = '" + requestTablaActualizar.getRfc()+"'", 
+                + (requestTablaActualizar.getMes()-1)+ " AND rfc = '" + requestTablaActualizar.getRfc()+"'", 
                 new BeanPropertyRowMapper<tablaDto>(tablaDto.class));
         return listPeriodo;
     }
