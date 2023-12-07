@@ -38,4 +38,10 @@ public class tablaActualizarDao {
                 new BeanPropertyRowMapper<usuarioDto>(usuarioDto.class));
         return listInfo;
     }
+    
+    public void queryactualiza(double totalInterest, String rfc) {
+            jdbcTemplate.execute("update genamortizacion set totalInterest =" 
+                    + totalInterest + " where rfc = '" 
+                    + rfc + "'");
+        }
 }

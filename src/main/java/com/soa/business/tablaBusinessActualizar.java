@@ -104,14 +104,11 @@ public class tablaBusinessActualizar {
                 balance = nbalance;
             }
 
-            
             respuestaTablaActualizar.setPagos(pagos);
             
-            
-            
+            tablaActualizar.queryactualiza(totalInterest, rfc);
             
             respuestaTablaActualizar.setMessage("Pago extra aprobado");
-//            respuesta.setUsuarios(list);
             
         } catch (Exception e) {
             e.printStackTrace();
