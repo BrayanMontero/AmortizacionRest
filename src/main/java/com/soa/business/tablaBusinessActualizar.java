@@ -115,8 +115,7 @@ public class tablaBusinessActualizar {
             
         } catch (Exception e) {
             e.printStackTrace();
-//            respuesta.setMessage("Error en BD al consultar login: " 
-//                    + usuarioDto.getLogin());
+            respuestaTablaActualizar.setMessage("Pago extra NO aprobado");
         }
         return respuestaTablaActualizar;
     }

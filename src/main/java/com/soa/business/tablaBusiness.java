@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import com.soa.commons.Env;
 import com.soa.dao.tablaDao;
 import com.soa.dto.RequestTabla;
 import com.soa.dto.RespuestaTabla;
@@ -33,9 +34,17 @@ public class tablaBusiness {
         List<tablaDto> pagos = new ArrayList<>();
         
         double balance = requestTabla.getCantida();
-        //double tasaInteresMensual = requestTabla.getInteres() / 1200.0; // Tasa de interés mensual
-        double tasaInteres = requestTabla.getInteres() / 100.0; // Tasa de interés mensual
-        //System.out.println(tasaInteresMensual );
+        
+        // Obtener el porcentaje de interés desde el archivo de propiedades
+        String porcentaje = Env.getProperty("porcentaje.interes");
+
+        // Parsear el porcentaje a double
+        double porcentajeEnv = Double.parseDouble(porcentaje);
+
+        // Calcular la tasa de interés mensual
+        double tasaInteres = porcentajeEnv / 100.0;
+
+        
         double totalInterest = 0;
 
         for (int i = 1; i <= requestTabla.getMeses(); i++) {
