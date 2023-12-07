@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.soa.dao.tablaDao;
@@ -15,6 +16,9 @@ import com.soa.dto.tablaDto;
 public class tablaBusiness {
     @Autowired
     private tablaDao tabla;
+    
+    @Autowired
+    protected JdbcTemplate jdbcTemplate;
     
 // taza, meses, prestamo, pago mensual, pago total, num tarjeta
 
@@ -36,7 +40,6 @@ public class tablaBusiness {
 
         for (int i = 1; i <= requestTabla.getMeses(); i++) {
             double interest = balance * tasaInteres/12;
-            
             double payment = calcularPagoMensual(tasaInteres, requestTabla.getMeses(), requestTabla.getCantida());
             double nbalance=balance+balance*tasaInteres/12-payment;
             double capital = payment-interest;         
@@ -50,8 +53,18 @@ public class tablaBusiness {
             pago.setCapital(capital);
             pago.setBalance(nbalance);
             pago.setTotalInterest(totalInterest);
-
             pagos.add(pago);
+            String sql = "INSERT INTO tabla (periodo, pago, interes, capital, balance, totalInterest, rfc) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            jdbcTemplate.update(
+                    sql,
+                    pago.getPeriodo(),
+                    pago.getPago(),
+                    pago.getInteres(),
+                    pago.getCapital(),
+                    pago.getBalance(),
+                    pago.getTotalInterest(),
+                    requestTabla.getNum_tarjeta()
+            );
             balance = nbalance;
         }
 

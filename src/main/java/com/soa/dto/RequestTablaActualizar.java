@@ -1,21 +1,13 @@
 package com.soa.dto;
 
 public class RequestTablaActualizar {
-    private String num_tarjeta;
+    private String rfc;
     private Integer mes;
     private double pago;
     /**
      * @return the num_tarjeta
      */
-    public String getNum_tarjeta() {
-        return num_tarjeta;
-    }
-    /**
-     * @param num_tarjeta the num_tarjeta to set
-     */
-    public void setNum_tarjeta(String num_tarjeta) {
-        this.num_tarjeta = num_tarjeta;
-    }
+  
     /**
      * @return the mes
      */
@@ -39,6 +31,18 @@ public class RequestTablaActualizar {
      */
     public void setPago(double pago) {
         this.pago = pago;
+    }
+    /**
+     * @return the rfc
+     */
+    public String getRfc() {
+        return rfc;
+    }
+    /**
+     * @param rfc the rfc to set
+     */
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
     }
 
 }

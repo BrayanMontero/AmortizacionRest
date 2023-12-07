@@ -7,6 +7,7 @@ public class tablaDto {
     private double capital;
     private double balance;
     private double totalInterest;
+    private String rfc;
     /**
      * @return the periodo
      */
@@ -79,6 +80,19 @@ public class tablaDto {
     public void setTotalInterest(double totalInterest) {
         this.totalInterest = totalInterest;
     }
+    /**
+     * @return the rfc
+     */
+    public String getRfc() {
+        return rfc;
+    }
+    /**
+     * @param rfc the rfc to set
+     */
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
+    }
     
+   
     
 }

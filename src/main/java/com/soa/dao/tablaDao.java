@@ -21,5 +21,6 @@ public class tablaDao {
                                     requesTabla.getCantida()+ ", " +
                                     totalInterest + ");");
     }
+   
 
 }

@@ -49,7 +49,7 @@ public class mainRest {
 
                 // Pass variables to tablaRest controller
                 RequestTabla requestTabla = new RequestTabla();
-                requestTabla.setNum_tarjeta(request.getNum_tarjeta());
+                requestTabla.setNum_tarjeta(request.getRfc());
                 requestTabla.setInteres(request.getInteres());
                 requestTabla.setMeses(request.getMeses());
                 requestTabla.setCantida(request.getCantida());

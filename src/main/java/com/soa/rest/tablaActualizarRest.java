@@ -18,6 +18,7 @@ import com.soa.dto.Request;
 import com.soa.dto.RequestTabla;
 import com.soa.dto.RequestTablaActualizar;
 import com.soa.dto.RespuestaTabla;
+import com.soa.dto.RespuestaTablaActualizar;
 import com.soa.dto.tablaDto;
 
 
@@ -30,10 +31,10 @@ public class tablaActualizarRest {
     private tablaBusinessActualizar business;
 
     @RequestMapping(method=RequestMethod.POST, path="/tablaActualizar")
-    public ResponseEntity<RespuestaTabla> tabla(@RequestBody RequestTablaActualizar requestTablaActualizar) {
-        ResponseEntity<RespuestaTabla> re = null;
+    public ResponseEntity<RespuestaTablaActualizar> tabla(@RequestBody RequestTablaActualizar requestTablaActualizar) {
+        ResponseEntity<RespuestaTablaActualizar> re = null;
      
-        RespuestaTabla respuesta = business.generarPagos(requestTablaActualizar);
+        RespuestaTablaActualizar respuesta = business.generarPagos(requestTablaActualizar);
         re = new ResponseEntity<>(respuesta, HttpStatus.OK);
         return re;
     }
