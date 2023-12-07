@@ -14,13 +14,13 @@ public class LogConfiguration {
     private static final String FILE_NAME = "filename";
 
     /** Nombre de la bitacora. */
-    private static final String FILE_NAME_VALUE = "d:\\logs\\llamadas.log";
+    private static final String FILE_NAME_VALUE = "c:\\logs\\amortizacion.log";
 
     /** Elemento component del contexto. */
     private static final String COMPONENT = "component";
 
     /** Nombre del componente. */
-    private static final String COMPONENT_VALUE = "ServicioLlamadas";
+    private static final String COMPONENT_VALUE = "ServicioAmortizacion";
 
     /** Elemento transactionId del contexto. */
     private static final String TRANSACTION_ID = "transactionId";

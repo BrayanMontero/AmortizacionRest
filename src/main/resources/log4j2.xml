@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<!-- %p prioridad, %d date, %X variable, %c clase, %M metodo, %m mensaje, %n salto-->
+			<PatternLayout
+				pattern="[%p]|%d|%X{component}|%X{stakeholder}|%c{1}|%M|[%X{transactionId}]|%m%n" />
+		</Console>
+
+		<Routing name="RoutingAppender">
+			<Routes pattern="${ctx:filename}">
+				<Route>
+					<RollingFile name="Rolling-${ctx:filename}" fileName="${ctx:filename}"
+						filePattern="${ctx:filename}.%i.Log.gz">
+						<PatternLayout
+							pattern="[%p]|%d|%X{component}|%c{1}|%M|[%X{transactionId}]|%m%n" />
+						<SizeBasedTriggeringPolicy size="20 MB" />
+					</RollingFile>
+				</Route>
+
+				<!-- By having this set to ${ctx:filename} it will match when filename 
+					is not set in the context -->
+				<Route ref="Console" key="${ctx:filename}" />
+			</Routes>
+		</Routing>
+	</appenders>
+
+	<loggers>
+		<root level="info">
+			<appender-ref ref="RoutingAppender" />
+			<appender-ref ref="Console" />
+		</root>
+	</loggers>
+</configuration>

@@ -1,5 +1,7 @@
 package com.soa.dto;
 
+import com.google.gson.Gson;
+
 public class RespuestaMain {
     private String mensaje;
     private RespuestaTabla respuestaTabla;
@@ -47,6 +49,10 @@ public class RespuestaMain {
         this.respuestaDisp = respuestaDisp;
     }
 
-   
+    @Override
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
+        }
 
 }

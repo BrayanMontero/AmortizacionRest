@@ -1,5 +1,7 @@
 package com.soa.dto;
 
+import com.google.gson.Gson;
+
 public class Request {
 
     private String rfc;
@@ -67,5 +69,11 @@ public class Request {
     public void setNum_tarjeta(String num_tarjeta) {
         this.num_tarjeta = num_tarjeta;
     }
+    
+    @Override
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
+        }
     
 }

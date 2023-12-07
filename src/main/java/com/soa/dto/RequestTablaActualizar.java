@@ -1,5 +1,7 @@
 package com.soa.dto;
 
+import com.google.gson.Gson;
+
 public class RequestTablaActualizar {
     private String rfc;
     private Integer mes;
@@ -45,4 +47,9 @@ public class RequestTablaActualizar {
         this.rfc = rfc;
     }
 
+    @Override
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
+        }
 }
