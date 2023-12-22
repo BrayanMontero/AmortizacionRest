@@ -1,1 +1,1 @@
-microservicio para crear uba tabla de amortizacion
+microservicio para crear una tabla de amortizacion
