@@ -19,11 +19,11 @@ import org.apache.logging.log4j.Logger;
 import com.google.gson.Gson;
 import com.soa.commons.LogConfiguration;
 import com.soa.dto.Request;
-import com.soa.dto.RequestTabla;
+import com.soa.dto.IngresarTabla;
 import com.soa.dto.RespuestaBuro;
 import com.soa.dto.RespuestaDisp;
 import com.soa.dto.RespuestaMain;
-import com.soa.dto.RespuestaTabla;
+import com.soa.dto.RespondeTablaAmortizacion;
 
 @RestController
 public class mainRest {
@@ -60,7 +60,7 @@ public class mainRest {
                 System.out.println("Aprobado");
 
                 // Pass variables to tablaRest controller
-                RequestTabla requestTabla = new RequestTabla();
+                IngresarTabla requestTabla = new IngresarTabla();
                 requestTabla.setNum_tarjeta(request.getNum_tarjeta());
                 requestTabla.setInteres(request.getInteres());
                 requestTabla.setMeses(request.getMeses());
@@ -68,11 +68,11 @@ public class mainRest {
                 requestTabla.setRfc(request.getRfc());
 
                 // Call tablaRest controller
-                ResponseEntity<RespuestaTabla> tablaResponseEntity = restTemplate.postForEntity(
-                        "http://localhost:8080/tabla", requestTabla, RespuestaTabla.class);
+                ResponseEntity<RespondeTablaAmortizacion> tablaResponseEntity = restTemplate.postForEntity(
+                        "http://localhost:8080/tabla", requestTabla, RespondeTablaAmortizacion.class);
 
                 // You can handle the response from tablaRest as needed
-                RespuestaTabla respuestaTabla = tablaResponseEntity.getBody();
+                RespondeTablaAmortizacion respuestaTabla = tablaResponseEntity.getBody();
 
                 // Construct the main response
                 RespuestaMain respuestaMain = new RespuestaMain();

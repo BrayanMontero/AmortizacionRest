@@ -11,7 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.soa.dto.RequestTablaActualizar;
-import com.soa.dto.tablaDto;
+import com.soa.dto.TablaAmortizacionDto;
 import com.soa.dto.usuarioDto;
 
 /**
@@ -22,12 +22,12 @@ public class tablaActualizarDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<tablaDto> query(RequestTablaActualizar requestTablaActualizar) {
-        List<tablaDto> listPeriodo = jdbcTemplate.query(
+    public List<TablaAmortizacionDto> query(RequestTablaActualizar requestTablaActualizar) {
+        List<TablaAmortizacionDto> listPeriodo = jdbcTemplate.query(
                 "select pago, interes, capital, balance, totalInterest, rfc"
                 + " from tabla where periodo= "
                 + (requestTablaActualizar.getMes()-1)+ " AND rfc = '" + requestTablaActualizar.getRfc()+"'", 
-                new BeanPropertyRowMapper<tablaDto>(tablaDto.class));
+                new BeanPropertyRowMapper<TablaAmortizacionDto>(TablaAmortizacionDto.class));
         return listPeriodo;
     }
     

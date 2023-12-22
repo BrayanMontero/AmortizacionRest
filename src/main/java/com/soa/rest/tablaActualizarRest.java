@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.soa.business.buroBusiness;
-import com.soa.business.tablaBusiness;
+
+import com.soa.business.TablaAmortizacionBusiness;
 import com.soa.business.tablaBusinessActualizar;
 import com.soa.commons.LogConfiguration;
 import com.soa.dto.Request;
-import com.soa.dto.RequestTabla;
+import com.soa.dto.IngresarTabla;
 import com.soa.dto.RequestTablaActualizar;
-import com.soa.dto.RespuestaTabla;
+import com.soa.dto.RespondeTablaAmortizacion;
 import com.soa.dto.RespuestaTablaActualizar;
-import com.soa.dto.tablaDto;
+import com.soa.dto.TablaAmortizacionDto;
 
 
 /**

@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 
 import com.soa.dao.tablaActualizarDao;
 import com.soa.dto.RequestTablaActualizar;
-import com.soa.dto.RespuestaTabla;
+import com.soa.dto.RespondeTablaAmortizacion;
 import com.soa.dto.RespuestaTablaActualizar;
-import com.soa.dto.tablaDto;
+import com.soa.dto.TablaAmortizacionDto;
 import com.soa.dto.usuarioDto;
 
 @Component
@@ -29,9 +29,9 @@ public class tablaBusinessActualizar {
         
         
         try {
-            List<tablaDto> listPeriodo = tablaActualizar.query(requestTablaActualizar);
-            List<tablaDto> pagos = new ArrayList<>();
-            tablaDto primerPeriodo = listPeriodo.get(0);
+            List<TablaAmortizacionDto> listPeriodo = tablaActualizar.query(requestTablaActualizar);
+            List<TablaAmortizacionDto> pagos = new ArrayList<>();
+            TablaAmortizacionDto primerPeriodo = listPeriodo.get(0);
             
             List<usuarioDto> listInfo = tablaActualizar.queryinfo(requestTablaActualizar);
             List<usuarioDto> pagosInfo = new ArrayList<>();
@@ -74,7 +74,7 @@ public class tablaBusinessActualizar {
 
                 totalInterest += interest;
 
-                tablaDto pago = new tablaDto();
+                TablaAmortizacionDto pago = new TablaAmortizacionDto();
                 pago.setPeriodo(i);
                 pago.setPago(payment);
                 pago.setInteres(interest);

@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 
 public class RespuestaMain {
     private String mensaje;
-    private RespuestaTabla respuestaTabla;
+    private RespondeTablaAmortizacion respuestaTabla;
     private RespuestaDisp respuestaDisp;
 
     /**
@@ -24,14 +24,14 @@ public class RespuestaMain {
     /**
      * @return the respuestaTabla
      */
-    public RespuestaTabla getRespuestaTabla() {
+    public RespondeTablaAmortizacion getRespuestaTabla() {
         return respuestaTabla;
     }
 
     /**
      * @param respuestaTabla the respuestaTabla to set
      */
-    public void setRespuestaTabla(RespuestaTabla respuestaTabla) {
+    public void setRespuestaTabla(RespondeTablaAmortizacion respuestaTabla) {
         this.respuestaTabla = respuestaTabla;
     }
 

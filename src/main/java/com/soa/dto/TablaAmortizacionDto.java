@@ -1,6 +1,6 @@
 package com.soa.dto;
 
-public class tablaDto {
+public class TablaAmortizacionDto {
     private int periodo;
     private double pago;
     private double interes;

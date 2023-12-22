@@ -6,7 +6,7 @@ package com.soa.dto;
 /**
  * 
  */
-public class RequestTabla {
+public class IngresarTabla {
     private String num_tarjeta;
     private Integer interes;
     private Integer meses;

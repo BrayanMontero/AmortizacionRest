@@ -2,22 +2,22 @@ package com.soa.dto;
 
 import java.util.List;
 
-public class RespuestaTabla {
+public class RespondeTablaAmortizacion {
 
-    private List<tablaDto> pagos;
+    private List<TablaAmortizacionDto> pagos;
     private String message;
 
     /**
      * @return the pagos
      */
-    public List<tablaDto> getPagos() {
+    public List<TablaAmortizacionDto> getPagos() {
         return pagos;
     }
 
     /**
      * @param pagos the pagos to set
      */
-    public void setPagos(List<tablaDto> pagos) {
+    public void setPagos(List<TablaAmortizacionDto> pagos) {
         this.pagos = pagos;
     }
 

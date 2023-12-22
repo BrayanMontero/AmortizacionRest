@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.soa.dao.dispDao;
-import com.soa.dao.tablaDao;
+import com.soa.dao.TablaAmortizacionDao;
 import com.soa.dto.RespuestaDisp;
 
 /**

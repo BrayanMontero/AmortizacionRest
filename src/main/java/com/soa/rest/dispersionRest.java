@@ -10,12 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.soa.business.buroBusiness;
 import com.soa.business.dispBusiness;
 import com.soa.dto.Request;
 import com.soa.dto.RespuestaBuro;
 import com.soa.dto.RespuestaDisp;
-import com.soa.dto.buroDto;
 
 
 /**
